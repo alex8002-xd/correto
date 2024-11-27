@@ -28,5 +28,4 @@ transform: translate(-12px, -12px);
 .btn:hover::before{
     transform: translate(12px, 12px);  
 }
-.grad{background: rgb(54,70,128);
-background: linear-gradient(114deg, rgba(54,70,128,1) 0%, rgba(89,124,224,1) 49%, rgba(93,146,176,1) 100%);}
+
