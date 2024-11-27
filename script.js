@@ -46,7 +46,7 @@ inputBox.addEventListener('input', () => {
         const speed = Math.round(wordsTyped / timeTaken);
         wpmDisplay.textContent = `WPM: ${speed}`;
 
-        const correctCharacters = inputText.split('').filter((char, index) => char === currentSentence[index]).length;
+        const correctCharacters = inputText.split('').filter((char, game2) => char === currentSentence[game2]).length;
         const accuracy = Math.round((correctCharacters / currentSentence.length) * 100);
         accuracyDisplay.textContent = `Accuracy: ${accuracy}%`;
 
