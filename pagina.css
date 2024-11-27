@@ -7,7 +7,7 @@ body {
 }
 header {
     background-color: rgba(117, 115, 204, 0.541);
-    color: #fff;
+    color: #333;
     padding: o;
     text-align: center;
 }
@@ -28,7 +28,7 @@ th, td {
 }
 th {
     background-color: rgba(116,115,204,0.87718837535014);
-    color: #fff;
+    color: #333;
 }
 footer {
     text-align: center;
