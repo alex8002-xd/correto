@@ -1,37 +1,26 @@
 function checkAnswers() {
-    let score = 0;
-    
-    
-    const answers = [
-        document.getElementById("q1").value,
-        document.getElementById("q2").value,
-        document.getElementById("q3").value,
-        document.getElementById("q4").value,
-        document.getElementById("q5").value,
-        document.getElementById("q6").value,
-        document.getElementById("q7").value,
-        document.getElementById("q8").value,
-        document.getElementById("q9").value,
-        document.getElementById("q10").value
-    ];
+    const correctAnswers = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]; 
+    let score = 0; 
+    let feedback = ""; 
 
-    
-    const correctAnswers = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"];
+    for (let i = 1; i <= 10; i++) {
+        const answer = document.getElementById("q" + i).value; 
+        if (answer === correctAnswers[i - 1]) { 
+            score++; 
+            feedback += `Pregunta ${i}: ✅ Correcta<br>`; 
+        } else {
+            feedback += `Pregunta ${i}: ❌ Incorrecta<br>`;
+        }
+    }
 
-    
-    answers.forEach((answer, index) => {
-        if (answer === correctAnswers[index]) score++;
-    });
-
-    
     const result = document.getElementById("result");
-    result.textContent = "Obtuviste " + score + " de 10 respuestas correctas.";
-    
-    if (score === 10) {
-        result.textContent += " ¡Excelente trabajo!";
-        result.style.color = "green";
+    result.innerHTML = `${feedback}<br><strong>Obtuviste ${score} de 10 respuestas correctas.</strong>`;
+
+    if (score === correctAnswers.length) {
+        result.innerHTML += "<br>¡Excelente trabajo! 🎉";
+        result.style.color = "black";
     } else {
-        result.textContent += " Revisa tus respuestas e inténtalo de nuevo.";
-        result.style.color = "red";
+        result.innerHTML += "<br>Revisa tus respuestas e inténtalo de nuevo.";
+        result.style.color = "black"; 
     }
 }
