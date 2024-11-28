@@ -1,5 +1,5 @@
 const sentences = [
-    "Yesterday, it was raining and thundering all day. Ann was playing inside the house. She wanted to be outside. She wasn't playing outside because it was raining. She was feeling tired of being trapped inside the house.",
+   "Yesterday, it was raining and thundering all day. Ann was playing inside the house. She wanted to be outside. She wasn't playing outside because it was raining. She was feeling tired of being trapped inside the house.",
     "Ann was trying to keep busy inside the house. She was reading her book until the electricity went out. Then, she decided to practice her sewing. She was practicing sewing until lunchtime. After lunch, she sat by the window and watched the rain.",
     "While Ann was watching the rain, the phone rang. Her mother was calling to say she was coming home. She was bringing a new game. Ann and her mother ate ice cream and played the game",
     "While I was doing my homework, my cousin visited us. It was eight o’clock and after that I couldn’t even finish my homework.",
@@ -8,8 +8,7 @@ const sentences = [
     "When I walked into the office, several people were busily typing, some were talking on the phones, the boss was yelling directions, and customers were waiting to be helped. One customer was yelling at a secretary and waving his hands. Others were complaining to each other about the bad service.",
     "A broadband jam is a network of the mind. One cannot separate chickens from glowing periods. A production is a faucet from the right perspective. The lines could be said to resemble zincoid females. A deborah is a tractor's whale. Cod are elite japans. Some posit the wiglike norwegian to be less than plashy. A pennoned windchime's burst comes with it the thought that the printed trombone is a supply. Relations are restless tests.",
     "In recent years, some teeming herons are thought of simply as numbers. Nowhere is it disputed that an unlaid fur is a marble of the mind. Far from the truth, few can name a glossy lier that isn't an ingrate bone. The chicken is a giraffe. They were lost without the abscessed leek that composed their fowl. An interviewer is a tussal bomb. Vanward maracas show us how scarfs can be doubts. Few can name an unguled punch that isn't pig.",
-    "A cough is a talk from the right perspective. A designed tractor's tray comes with it the thought that the snuffly flax is a rainbow. Their health was, in this moment, an earthy passbook. This could be, or perhaps the swordfishes could be said to resemble healthy sessions. A capricorn is a helium from the right perspective. However, a sled is a mailman's tennis. The competitor of an alarm becomes a toeless raincoat. Their twist was, in this moment.",s
-    // (Los textos del arreglo son los mismos)
+    "A cough is a talk from the right perspective. A designed tractor's tray comes with it the thought that the snuffly flax is a rainbow. Their health was, in this moment, an earthy passbook. This could be, or perhaps the swordfishes could be said to resemble healthy sessions. A capricorn is a helium from the right perspective. However, a sled is a mailman's tennis. The competitor of an alarm becomes a toeless raincoat. Their twist was, in this moment.",   // (Puedes añadir más frases según lo desees)
 ];
 
 let startTime;
@@ -39,6 +38,7 @@ startButton.addEventListener('click', () => {
     // Limpia los resultados previos
     wpmDisplay.textContent = '';
     accuracyDisplay.textContent = '';
+    inputBox.style.borderColor = '';
 });
 
 // Monitorea el texto ingresado
@@ -72,7 +72,7 @@ inputBox.addEventListener('input', () => {
 resetButton.addEventListener('click', () => {
     inputBox.value = '';
     inputBox.disabled = true;
-    sentenceDisplay.textContent = 'Click "Start" to begin!';
+    sentenceDisplay.textContent = 'Click "Start Test" to begin';
     wpmDisplay.textContent = '';
     accuracyDisplay.textContent = '';
     inputBox.style.borderColor = '';
