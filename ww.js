@@ -60,9 +60,9 @@ comprobar.onclick = function(){
         }
 
         if(totalAciertos==orden_correcto.length){
-            txtResultado.innerHTML = "Muy bien!!";
+            txtResultado.innerHTML = "¡Muy bien!";
         }else{
-            txtResultado.innerHTML = "Existen errores!!";
+            txtResultado.innerHTML = "¡Existen errores!";
         }
     }else{
         alert("Completa las palabras");
