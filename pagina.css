@@ -1,49 +1,152 @@
+/* Configuración general */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
-}
-header {
-    background-color: rgba(117, 115, 204, 0.541);
-    color: #333;
-    padding: o;
-    text-align: center;
-}
-main {
-    padding: o;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-table, th, td {
-    border: 1px solid rgba(159, 156, 206, 0.404);
-}
-th, td {
-    padding: 0;
-    text-align: center;
-}
-th {
-    background-color: rgba(116,115,204,0.87718837535014);
-    color: #333;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(116,115,204,0.87718837535014);
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
-table {
-    width: 50%;
-    border: 10px;
-    background-color: rgba(129, 120, 180, 0.185);
-    margin: 30px;
+/* Encabezado */
+header {
+    background-color: #e0f7fa; /* Azul pastel */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #b2ebf2;
 }
-.grad{}
+
+header h1 {
+    color: #006064; /* Azul más oscuro */
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    color: #004d40; /* Verde oscuro */
+    margin: 5px 0 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Botones */
+button {
+    background-color: #aed581; /* Verde pastel */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #81c784; /* Verde más oscuro */
+}
+
+button:disabled {
+    background-color: #cfd8dc; /* Gris claro */
+    cursor: not-allowed;
+}
+
+/* Input y texto */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f1f8e9; /* Verde claro */
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #81c784;
+    background-color: #ffffff;
+}
+
+/* Navegación */
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fce4ec; /* Rosa pastel */
+    border-bottom: 2px solid #f8bbd0;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #880e4f; /* Rosa oscuro */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f8bbd0;
+    color: #4a148c; /* Morado oscuro */
+}
+
+.nav-link.active {
+    background-color: #f48fb1; /* Rosa más intenso */
+    color: #ffffff;
+}
+
+/* Títulos y subtítulos */
+h2, h3 {
+    color: #004d40;
+    margin-top: 20px;
+}
+
+/* Listas */
+ul, ol {
+    margin: 10px 0 20px 20px;
+    padding: 0;
+    color: #4e342e; /* Marrón suave */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f3e5f5; /* Morado claro */
+    border-top: 2px solid #d1c4e9;
+    color: #4a148c;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Mensajes */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #2e7d32; /* Verde oscuro */
+}
+
+.alert-error {
+    background-color: #ffebee; /* Rojo claro */
+    color: #c62828; /* Rojo oscuro */
+}
