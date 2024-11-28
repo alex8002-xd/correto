@@ -37,76 +37,75 @@
 <h1 >test de past continuos</h1>
 
 <div class="question">
-<label>1. I             <input type="text" name="q1">while went down the stairs.</label></div><br>
+<label>1. I             <input type="text" name="q1">while went down the stairs.<span class="error"></span></label></div><img src="caer.png" align="right"><br>
 
 <div class="question">
-<label>2. He            <input type="text" name="q2">very fast when he had an accident.</label></div><br>
+<label>2. He            <input type="text" name="q2">very fast when he had an accident.<span class="error"></span></label></div><img src="chocar.png" align="right"><br>
 
 <div class="question">
-<label>3. It            <input type="text" name="q3">when we left home.</label> </div><br>
+<label>3. It            <input type="text" name="q3">when we left home.<span class="error"></span></label> </div><img src="nevar.png" align="right"><br>
 
 <div class="question">
-<label>4. I             <input type="text" name="q4">you calling because i was working.</label></div><br>
+<label>4. I             <input type="text" name="q4">you calling because i was working.<span class="error"></span></label></div><img src="colgar.png" align="right"><br>
 
 <div class="question">
-<label>5. this morning  <input type="text" name="q5">and i made breakfast for everybody.</label></div><br>
+<label>5. this morning  <input type="text" name="q5">and i made breakfast for everybody.<span class="error"></span></label></div><img src="despertar.png" align="right"><br>
 
 <div class="question">
-<label>6. When i        <input type="text" name="q6">her,she was wearing a really nice purple dress.</label> </div><br>
+<label>6. When i        <input type="text" name="q6">her,she was wearing a really nice purple dress.<span class="error"></span></label></div><img src="ver.png" align="right"><br>
 
 <div class="question">
-<label>7. Last sunday we<input type="text" name="q7">late and we missed the train.</label></div><br>
+<label>7. Last sunday we<input type="text" name="q7">late and we missed the train.<span class="error"></span></label></div><img src="despertar.png" align="right"><br>
 
 <div class="question">
-<label>8. I             <input type="text" name="q8"> hello because you were walking very fast.</label></div><br>
+<label>8. I             <input type="text" name="q8"> hello because you were walking very fast.<span class="error"></span></label></div><img src="stfum.png" align="right"><br>
 
 <div class="question">
-<label>9. I <input type="text" name="q9"></label>happily when a loud noise  woke me up</div><br>
+<label>9. I <input type="text" name="q9">happily when a loud noise  woke me up<span class="error"></span></label></div><img src="dormir.png" align="right"><br>
 
 <div class="question">
-<label>10. What <input type="text" name="q10">when i called you last night?</label></div><br>
+<label>10. What <input type="text" name="q10">when i called you last night?<span class="error"></span></label></div><img src="hacer}.png" align="right"><br>
 
-<button type="button" onclick="checkAnswers()">Enviar</button>
+
         </form>
 </form>
 
          <br>
-        <div id="result"></div>
-        <div id="feedback" style="margin-top: 20px; color: red;"></div>
+          <button type="button" onclick="checkAnswers()">Enviar</button>
+        <button type="button" onclick="resetForm()">Reiniciar</button>
+    </form>
+    <br>
+    <div id="result"></div>
 
-        <script>
-            function checkAnswers() {
-                const answers = [
-                    "fell down", 
-                    "was driving", 
-                    "was snowing", 
-                    "didn't answer", 
-                    "got up", 
-                    "saw", 
-                    "got up", 
-                    "didn't say", 
-                    "was sleeping", 
-                    "were you doing"
-                ];
+    <script>
+        function checkAnswers() {
+            const answers = ["fell down", "was driving", "was snowing", "didn't answer", "got up", "saw", "got up", "didn't say", "was sleeping", "were you doing"];
+            let score = 0;
+            const form = document.forms['test'];
+            const questions = document.querySelectorAll('.question');
 
-                let score = 0;
-                const form = document.forms['test'];
-                let feedback = "<ul>";
-                for (let i = 0; i < answers.length; i++) {
-                    const userAnswer = form[`q${i + 1}`].value.toLowerCase().trim();
-                    if (userAnswer === answers[i]) {
-                        score += 10;
-                    } else {
-                        feedback += `<li>Pregunta ${i + 1}: Tu respuesta (${userAnswer || "vacío"}) es incorrecta. La respuesta correcta es: ${answers[i]}.</li>`;
-                    }
+            questions.forEach((question, index) => {
+                const input = form[`q${index + 1}`];
+                const errorSpan = question.querySelector('.error');
+                if (input.value.toLowerCase() === answers[index]) {
+                    score += 10;
+                    errorSpan.textContent = ""; // Clear error
+                } else {
+                    errorSpan.textContent = ` (Respuesta correcta: ${answers[index]})`;
+                    errorSpan.style.color = "red";
                 }
-                feedback += "</ul>";
+            });
 
-                document.getElementById('result').innerText = `>>>Tu puntuación es: ${score} puntos.<<<`;
-                document.getElementById('feedback').innerHTML = feedback;
-            }
-        </script>
-    </div>
+            document.getElementById('result').innerText = `>>>Tu puntuación es: ${score} puntos.<<<`;
+        }
 
+        function resetForm() {
+            const form = document.forms['test'];
+            form.reset();
+            document.getElementById('result').innerText = "";
+            const errorSpans = document.querySelectorAll('.error');
+            errorSpans.forEach(span => span.textContent = "");
+        }
+    </script>
 </body>
 </html>
