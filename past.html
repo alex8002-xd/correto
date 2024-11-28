@@ -69,22 +69,44 @@
 <button type="button" onclick="checkAnswers()">Enviar</button>
         </form>
 </form>
-<br>
-<div id="result"></div>
 
-<script>
-    function checkAnswers() {
-        const answers = ["fell down", "was driving", "was snowing", "didn't answer", "got up", "saw", "got up", "didn't say", "was sleeping", "were you doing"];
-        let score = 0;
-        const form = document.forms['test'];
-        for (let i = 0; i < answers.length; i++) {
-            if (form[`q${i + 1}`].value.toLowerCase() === answers[i]) {
-                score += 10;
+         <br>
+        <div id="result"></div>
+        <div id="feedback" style="margin-top: 20px; color: red;"></div>
+
+        <script>
+            function checkAnswers() {
+                const answers = [
+                    "fell down", 
+                    "was driving", 
+                    "was snowing", 
+                    "didn't answer", 
+                    "got up", 
+                    "saw", 
+                    "got up", 
+                    "didn't say", 
+                    "was sleeping", 
+                    "were you doing"
+                ];
+
+                let score = 0;
+                const form = document.forms['test'];
+                let feedback = "<ul>";
+                for (let i = 0; i < answers.length; i++) {
+                    const userAnswer = form[`q${i + 1}`].value.toLowerCase().trim();
+                    if (userAnswer === answers[i]) {
+                        score += 10;
+                    } else {
+                        feedback += `<li>Pregunta ${i + 1}: Tu respuesta (${userAnswer || "vacío"}) es incorrecta. La respuesta correcta es: ${answers[i]}.</li>`;
+                    }
+                }
+                feedback += "</ul>";
+
+                document.getElementById('result').innerText = `>>>Tu puntuación es: ${score} puntos.<<<`;
+                document.getElementById('feedback').innerHTML = feedback;
             }
-        }
-        document.getElementById('result').innerText = `>>>Tu puntuación es : ${score}  puntos.<<<`;
-    }
-</script>
+        </script>
+    </div>
 
 </body>
 </html>
